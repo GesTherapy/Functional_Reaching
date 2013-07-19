@@ -1,0 +1,20 @@
+﻿<Application x:Class="GesTherapy.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:sample="clr-namespace:Microsoft.Samples.Kinect.BasicInteractions;assembly=BasicInteractions-WPF"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/BasicInteractions-WPF;component/Resources/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/BasicInteractions-WPF;component/Controls/ControlStyles.xaml" />
+                <ResourceDictionary>
+                    <sample:VisibilityConverter x:Key="VisibilityConverter" />
+                    <sample:EqualToConverter x:Key="EqualToConverter" />
+                    <sample:MillisecondsToKeyTimeConverter x:Key="MillisecondsToKeyTimeConverter" />
+                    <sample:MillisecondsToDurationConverter x:Key="MillisecondsToDurationConverter" />
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

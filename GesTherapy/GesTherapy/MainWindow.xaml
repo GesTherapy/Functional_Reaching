@@ -1,0 +1,30 @@
+﻿<Window x:Class="GesTherapy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:GesTherapy"
+        xmlns:sample="clr-namespace:Microsoft.Samples.Kinect.BasicInteractions;assembly=BasicInteractions-WPF"
+        Title="GesTherapy" Closing="MainWindow_Closing" Background="White" WindowState="Maximized" WindowStyle="None">
+    <Grid>
+        <Viewbox>
+
+            <Grid Width="1920" Height="1080">
+
+                <local:ActivitySelection x:Name="Select" Visibility="Collapsed"/>
+                <local:StretchingActivity x:Name="Stretch" Visibility="Collapsed"/>
+
+
+                <!-- Show hand-->
+                <sample:HandVisualizer IsHitTestVisible="False" Hand="{Binding Path=Controller.ActiveHand, Source={x:Static Application.Current}}" >
+                    <sample:HandVisualizer.Style>
+                        <Style TargetType="{x:Type sample:HandVisualizer}">
+                            <Setter Property="Opacity" Value="100" />
+                        </Style>
+                    </sample:HandVisualizer.Style>
+                </sample:HandVisualizer>
+
+            </Grid>
+        </Viewbox>
+    </Grid>
+
+</Window>
+
